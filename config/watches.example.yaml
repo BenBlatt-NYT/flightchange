@@ -1,0 +1,69 @@
+# Copy this file to watches.yaml and edit it.
+#
+# Top-level settings
+# ------------------
+# poll_interval_minutes: how often to re-check all watches (default: 5)
+# request_delay_seconds: pause between individual API calls (default: 3)
+#
+# Each item under "watches" is one Skiplagged search.
+# Add one entry per route/date combo you want to track (~20 entries = ~20 flights).
+#
+# Required fields per watch
+# -------------------------
+# id:             unique name for this watch (letters, numbers, dashes)
+# origin:         airport/city code or name (e.g. NYC, JFK, BOS, "New York")
+# destination:    same format as origin (e.g. LAX, MIA, LON)
+# departure_date: YYYY-MM-DD (must be today or later)
+#
+# Optional fields per watch
+# -------------------------
+# return_date:    YYYY-MM-DD for round-trip; omit or use null for one-way
+# flight_number:  specific flight to track, e.g. UA781 (from #trip=UA781 in a Skiplagged URL)
+# preferred_airlines: optional list like [UA] to narrow search results
+# adults:         passenger count (default: 1)
+# max_stops:      none | one | many
+# sort:           price | duration | value (default: price)
+# limit:          number of results to fetch (default: 5)
+
+poll_interval_minutes: 5
+request_delay_seconds: 3
+
+watches:
+  - id: nyc-lax-aug15
+    origin: NYC
+    destination: LAX
+    departure_date: "2026-08-15"
+    return_date: null
+    adults: 1
+    max_stops: one
+    sort: price
+    limit: 5
+
+  - id: bos-mia-sep10
+    origin: BOS
+    destination: MIA
+    departure_date: "2026-09-10"
+    return_date: "2026-09-17"
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 5
+
+  - id: sfo-ord-oneway
+    origin: SFO
+    destination: ORD
+    departure_date: "2026-10-03"
+    adults: 2
+    max_stops: many
+    sort: duration
+    limit: 10
+
+  - id: lax-sfo-ua781-aug26
+    origin: LAX
+    destination: SFO
+    departure_date: "2026-08-26"
+    flight_number: UA781
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 20

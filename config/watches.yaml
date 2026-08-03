@@ -1,0 +1,54 @@
+poll_interval_minutes: 5
+request_delay_seconds: 3
+
+# Morning direct flights LAX → SFO on 2026-08-11
+# (You mentioned five flights but shared four URLs — add a fifth entry if needed.)
+
+watches:
+  - id: ua781-aug11
+    origin: LAX
+    destination: SFO
+    departure_date: "2026-08-11"
+    flight_number: UA781
+    direct_only: true
+    exclude_airlines: [Frontier, Spirit]
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: dl1421-aug11
+    origin: LAX
+    destination: SFO
+    departure_date: "2026-08-11"
+    flight_number: DL1421
+    direct_only: true
+    exclude_airlines: [Frontier, Spirit]
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: as1603-aug11
+    origin: LAX
+    destination: SFO
+    departure_date: "2026-08-11"
+    flight_number: AS1603
+    direct_only: true
+    exclude_airlines: [Frontier, Spirit]
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: aa6274-aug11
+    origin: LAX
+    destination: SFO
+    departure_date: "2026-08-11"
+    flight_number: AA6274
+    direct_only: true
+    exclude_airlines: [Frontier, Spirit]
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100

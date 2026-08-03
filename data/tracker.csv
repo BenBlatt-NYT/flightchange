@@ -1,0 +1,4 @@
+checked_at,watch_id,origin,destination,departure_date,flight_number,price,ok,error
+2026-08-03T19:27:36.829668+00:00,lax-sfo-ua781-aug26,LAX,SFO,2026-08-26,UA781,111.00,1,
+2026-08-03T19:30:21.431251+00:00,lax-sfo-ua781-aug26,LAX,SFO,2026-08-26,UA781,,0,UA781 not found in results
+2026-08-03T19:30:33.829866+00:00,lax-sfo-direct-aug26,LAX,SFO,2026-08-26,,76.00,1,
