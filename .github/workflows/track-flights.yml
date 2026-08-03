@@ -2,7 +2,8 @@ name: Track flights
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    # Every 5 minutes (UTC). Offset from :00 to avoid peak load delays.
+    - cron: "3/5 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -34,10 +35,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git pull --rebase origin main
           git add data/aug11-morning.csv
           if git diff --staged --quiet; then
-            echo "No price changes to commit."
-          else
-            git commit -m "Update flight prices"
-            git push
+            echo "No CSV changes to commit."
+            exit 0
           fi
+          git commit -m "Update flight prices $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
