@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -34,11 +36,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add data/aug11-prices.csv
           if git diff --staged --quiet; then
             echo "No CSV changes to commit."
             exit 0
           fi
           git commit -m "Update aug11 prices $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          git push origin HEAD:main
