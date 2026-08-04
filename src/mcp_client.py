@@ -44,7 +44,11 @@ class SkiplaggedMcpClient:
             with urllib.request.urlopen(request, timeout=self.timeout_seconds) as response:
                 body = response.read().decode("utf-8")
         except urllib.error.HTTPError as exc:
-            raise RuntimeError(f"MCP HTTP error {exc.code}: {exc.read().decode('utf-8', errors='replace')}") from exc
+            if exc.code == 429:
+                return {"error": {"message": "HTTP 429 rate limited"}}
+            raise RuntimeError(
+                f"MCP HTTP error {exc.code}: {exc.read().decode('utf-8', errors='replace')}"
+            ) from exc
 
         if not body.strip():
             return None

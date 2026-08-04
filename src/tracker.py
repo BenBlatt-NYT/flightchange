@@ -132,10 +132,10 @@ class FlightTracker:
             if self.debug and attempt > 1:
                 print(f"Retry attempt: {attempt}/{max_attempts}")
             response = self.client.search_flights(arguments)
-            if response.ok or "429" not in response.text:
+            if response.ok or ("429" not in response.text and "rate limit" not in response.text.lower()):
                 break
             if attempt < max_attempts:
-                time.sleep(5 * attempt)
+                time.sleep(15 * attempt)
 
         assert response is not None
         if self.debug:

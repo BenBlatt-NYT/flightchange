@@ -1,5 +1,5 @@
 poll_interval_minutes: 5
-request_delay_seconds: 4
+request_delay_seconds: 8
 
 # route_name groups routes for analysis (A, B, C, D, ...)
 
