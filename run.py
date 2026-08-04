@@ -9,7 +9,7 @@ from src.tracker import FlightTracker, load_config
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_CONFIG = ROOT / "config" / "watches.yaml"
-DEFAULT_CSV = ROOT / "data" / "tracker.csv"
+DEFAULT_CSV = ROOT / "data" / "flight-prices.csv"
 
 
 def main() -> None:

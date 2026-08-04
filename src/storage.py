@@ -8,6 +8,7 @@ from pathlib import Path
 
 CSV_FIELDS = [
     "checked_at",
+    "route_name",
     "watch_id",
     "origin",
     "destination",
@@ -38,6 +39,7 @@ class TrackerStore:
     def save_check(
         self,
         watch_id: str,
+        route_name: str,
         origin: str,
         destination: str,
         departure_date: str,
@@ -48,6 +50,7 @@ class TrackerStore:
     ) -> None:
         row = {
             "checked_at": datetime.now(timezone.utc).isoformat(),
+            "route_name": route_name,
             "watch_id": watch_id,
             "origin": origin,
             "destination": destination,

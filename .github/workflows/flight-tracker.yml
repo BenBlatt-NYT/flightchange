@@ -30,16 +30,16 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tracker
-        run: python run.py --once --csv data/aug11-prices.csv
+        run: python run.py --once --csv data/flight-prices.csv
 
       - name: Commit price updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/aug11-prices.csv
+          git add data/flight-prices.csv
           if git diff --staged --quiet; then
             echo "No CSV changes to commit."
             exit 0
           fi
-          git commit -m "Update aug11 prices $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "Update flight prices $(date -u +%Y-%m-%dT%H:%MZ)"
           git push origin HEAD:main

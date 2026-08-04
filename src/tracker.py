@@ -15,6 +15,7 @@ from .storage import TrackerStore
 @dataclass
 class Watch:
     id: str
+    route_name: str
     origin: str
     destination: str
     departure_date: str
@@ -51,6 +52,7 @@ def load_config(path: Path) -> TrackerConfig:
     watches = [
         Watch(
             id=item["id"],
+            route_name=item.get("route_name", ""),
             origin=item["origin"],
             destination=item["destination"],
             departure_date=item["departure_date"],
@@ -153,6 +155,7 @@ class FlightTracker:
         if not response.ok:
             self.store.save_check(
                 watch_id=watch.id,
+                route_name=watch.route_name,
                 origin=watch.origin,
                 destination=watch.destination,
                 departure_date=watch.departure_date,
@@ -171,6 +174,7 @@ class FlightTracker:
             message = parsed.summary or "No matching direct fare found"
             self.store.save_check(
                 watch_id=watch.id,
+                route_name=watch.route_name,
                 origin=watch.origin,
                 destination=watch.destination,
                 departure_date=watch.departure_date,
@@ -193,6 +197,7 @@ class FlightTracker:
 
         self.store.save_check(
             watch_id=watch.id,
+            route_name=watch.route_name,
             origin=watch.origin,
             destination=watch.destination,
             departure_date=watch.departure_date,
