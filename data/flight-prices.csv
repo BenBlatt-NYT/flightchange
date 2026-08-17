@@ -56015,3 +56015,49 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,p
 2026-08-17T12:02:38.930417+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,,0,DL2253 not found in results
 2026-08-17T12:02:53.441118+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,UA1006 not found in results
 2026-08-17T12:03:05.854418+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,,0,AA6425 not found in results
+2026-08-17T12:03:17.256897+00:00,A,ua781-aug11,LAX,SFO,2026-08-11,UA781,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T12:03:25.645148+00:00,A,dl1421-aug11,LAX,SFO,2026-08-11,DL1421,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T12:03:33.918712+00:00,A,as1603-aug11,LAX,SFO,2026-08-11,AS1603,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T12:03:42.155729+00:00,A,aa6274-aug11,LAX,SFO,2026-08-11,AA6274,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T12:04:00.449987+00:00,B,dl2980-aug27,LAX,SEA,2026-08-27,DL2980,,0,DL2980 not found in results
+2026-08-17T12:04:12.819862+00:00,B,as482-aug27,LAX,SEA,2026-08-27,AS482,,0,AS482 not found in results
+2026-08-17T12:04:31.113805+00:00,B,aa6476-aug27,LAX,SEA,2026-08-27,AA6476,,0,Failed to fetch from search: timeout of 10000ms exceeded
+2026-08-17T12:04:49.363538+00:00,B,ua2170-aug27,LAX,SEA,2026-08-27,UA2170,,0,Failed to fetch from search: timeout of 10000ms exceeded
+2026-08-17T12:05:04.355398+00:00,C,aa3053-aug24,LAX,PHX,2026-08-24,AA3053,,0,AA3053 not found in results
+2026-08-17T12:05:22.626021+00:00,C,ua5589-aug24,LAX,PHX,2026-08-24,UA5589,,0,Failed to fetch from search: timeout of 10000ms exceeded
+2026-08-17T12:05:34.523083+00:00,C,dl4119-aug24,LAX,PHX,2026-08-24,DL4119,,0,DL4119 not found in results
+2026-08-17T12:05:43.789281+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,,0,DL2253 not found in results
+2026-08-17T12:05:54.794320+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,UA1006 not found in results
+2026-08-17T12:06:13.074311+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,,0,Failed to fetch from search: timeout of 10000ms exceeded
