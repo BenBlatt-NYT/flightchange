@@ -55355,3 +55355,49 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,p
 2026-08-17T10:26:45.995938+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
 2026-08-17T10:26:54.488612+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,246.00,1,
 2026-08-17T10:27:02.894032+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,246.00,1,
+2026-08-17T10:30:19.643955+00:00,A,ua781-aug11,LAX,SFO,2026-08-11,UA781,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T10:30:28.021879+00:00,A,dl1421-aug11,LAX,SFO,2026-08-11,DL1421,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T10:30:36.531748+00:00,A,as1603-aug11,LAX,SFO,2026-08-11,AS1603,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T10:30:44.958701+00:00,A,aa6274-aug11,LAX,SFO,2026-08-11,AA6274,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T10:30:53.440133+00:00,B,dl2980-aug27,LAX,SEA,2026-08-27,DL2980,,0,DL2980 not found in results
+2026-08-17T10:31:01.916259+00:00,B,as482-aug27,LAX,SEA,2026-08-27,AS482,,0,AS482 not found in results
+2026-08-17T10:31:10.443707+00:00,B,aa6476-aug27,LAX,SEA,2026-08-27,AA6476,,0,AA6476 not found in results
+2026-08-17T10:31:19.071966+00:00,B,ua2170-aug27,LAX,SEA,2026-08-27,UA2170,334.00,1,
+2026-08-17T10:31:29.802943+00:00,C,aa3053-aug24,LAX,PHX,2026-08-24,AA3053,236.00,1,
+2026-08-17T10:31:38.504125+00:00,C,ua5589-aug24,LAX,PHX,2026-08-24,UA5589,236.00,1,
+2026-08-17T10:31:47.062139+00:00,C,dl4119-aug24,LAX,PHX,2026-08-24,DL4119,236.00,1,
+2026-08-17T10:31:55.872289+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
+2026-08-17T10:32:04.503466+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,246.00,1,
+2026-08-17T10:32:13.701681+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,246.00,1,
