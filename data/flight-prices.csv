@@ -55471,3 +55471,17 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,p
 2026-08-17T10:53:56.882753+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
 2026-08-17T10:54:05.306184+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,Failed to fetch from search: Request failed with status code 500
 2026-08-17T10:54:13.718361+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,246.00,1,
+2026-08-17T10:55:11.208478+00:00,A,ua781-aug11,LAX,SFO,2026-08-11,UA781,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:55:19.561985+00:00,A,dl1421-aug11,LAX,SFO,2026-08-11,DL1421,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:55:28.157426+00:00,A,as1603-aug11,LAX,SFO,2026-08-11,AS1603,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:55:36.977709+00:00,A,aa6274-aug11,LAX,SFO,2026-08-11,AA6274,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:55:45.437686+00:00,B,dl2980-aug27,LAX,SEA,2026-08-27,DL2980,429.00,1,
+2026-08-17T10:55:53.906432+00:00,B,as482-aug27,LAX,SEA,2026-08-27,AS482,313.00,1,
+2026-08-17T10:56:02.773334+00:00,B,aa6476-aug27,LAX,SEA,2026-08-27,AA6476,334.00,1,
+2026-08-17T10:56:11.219363+00:00,B,ua2170-aug27,LAX,SEA,2026-08-27,UA2170,334.00,1,
+2026-08-17T10:56:19.837032+00:00,C,aa3053-aug24,LAX,PHX,2026-08-24,AA3053,236.00,1,
+2026-08-17T10:56:29.061261+00:00,C,ua5589-aug24,LAX,PHX,2026-08-24,UA5589,236.00,1,
+2026-08-17T10:56:37.378568+00:00,C,dl4119-aug24,LAX,PHX,2026-08-24,DL4119,236.00,1,
+2026-08-17T10:56:45.831393+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
+2026-08-17T10:56:55.065413+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,UA1006 not found in results
+2026-08-17T10:57:03.676661+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,,0,AA6425 not found in results
