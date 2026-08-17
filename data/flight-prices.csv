@@ -61167,3 +61167,49 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,p
 2026-08-17T20:46:46.924998+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,,0,DL2253 not found in results
 2026-08-17T20:46:55.315649+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,UA1006 not found in results
 2026-08-17T20:47:03.907603+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,,0,AA6425 not found in results
+2026-08-17T20:50:12.069673+00:00,A,ua781-aug11,LAX,SFO,2026-08-11,UA781,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T20:50:20.251838+00:00,A,dl1421-aug11,LAX,SFO,2026-08-11,DL1421,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T20:50:28.451193+00:00,A,as1603-aug11,LAX,SFO,2026-08-11,AS1603,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T20:50:36.671495+00:00,A,aa6274-aug11,LAX,SFO,2026-08-11,AA6274,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-08-17T20:50:44.971746+00:00,B,dl2980-aug27,LAX,SEA,2026-08-27,DL2980,,0,DL2980 not found in results
+2026-08-17T20:50:53.262193+00:00,B,as482-aug27,LAX,SEA,2026-08-27,AS482,,0,AS482 not found in results
+2026-08-17T20:51:01.571904+00:00,B,aa6476-aug27,LAX,SEA,2026-08-27,AA6476,,0,AA6476 not found in results
+2026-08-17T20:51:10.071157+00:00,B,ua2170-aug27,LAX,SEA,2026-08-27,UA2170,,0,UA2170 not found in results
+2026-08-17T20:51:18.471224+00:00,C,aa3053-aug24,LAX,PHX,2026-08-24,AA3053,,0,AA3053 not found in results
+2026-08-17T20:51:26.874213+00:00,C,ua5589-aug24,LAX,PHX,2026-08-24,UA5589,,0,UA5589 not found in results
+2026-08-17T20:51:35.579724+00:00,C,dl4119-aug24,LAX,PHX,2026-08-24,DL4119,,0,DL4119 not found in results
+2026-08-17T20:51:43.873844+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,,0,DL2253 not found in results
+2026-08-17T20:51:52.287096+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,UA1006 not found in results
+2026-08-17T20:52:00.775952+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,,0,AA6425 not found in results
