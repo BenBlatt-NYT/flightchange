@@ -55457,3 +55457,17 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,p
 2026-08-17T10:51:47.156499+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
 2026-08-17T10:51:55.960905+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,246.00,1,
 2026-08-17T10:52:04.348513+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,246.00,1,
+2026-08-17T10:52:17.335723+00:00,A,ua781-aug11,LAX,SFO,2026-08-11,UA781,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:52:26.468768+00:00,A,dl1421-aug11,LAX,SFO,2026-08-11,DL1421,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:52:35.311285+00:00,A,as1603-aug11,LAX,SFO,2026-08-11,AS1603,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:52:44.300193+00:00,A,aa6274-aug11,LAX,SFO,2026-08-11,AA6274,,0,Failed to fetch from search: Invalid range for depart. Must be no less than 2026-08-16. Must be no greater than 2027-07-12. Hint: Today is 2026-08-17
+2026-08-17T10:52:53.008996+00:00,B,dl2980-aug27,LAX,SEA,2026-08-27,DL2980,429.00,1,
+2026-08-17T10:53:01.598007+00:00,B,as482-aug27,LAX,SEA,2026-08-27,AS482,313.00,1,
+2026-08-17T10:53:10.399842+00:00,B,aa6476-aug27,LAX,SEA,2026-08-27,AA6476,334.00,1,
+2026-08-17T10:53:19.127759+00:00,B,ua2170-aug27,LAX,SEA,2026-08-27,UA2170,334.00,1,
+2026-08-17T10:53:28.851773+00:00,C,aa3053-aug24,LAX,PHX,2026-08-24,AA3053,236.00,1,
+2026-08-17T10:53:39.012032+00:00,C,ua5589-aug24,LAX,PHX,2026-08-24,UA5589,,0,Failed to fetch from search: Request failed with status code 500
+2026-08-17T10:53:48.494510+00:00,C,dl4119-aug24,LAX,PHX,2026-08-24,DL4119,,0,Failed to fetch from search: Request failed with status code 500
+2026-08-17T10:53:56.882753+00:00,D,dl2253-aug20,LAX,LAS,2026-08-20,DL2253,246.00,1,
+2026-08-17T10:54:05.306184+00:00,D,ua1006-aug20,LAX,LAS,2026-08-20,UA1006,,0,Failed to fetch from search: Request failed with status code 500
+2026-08-17T10:54:13.718361+00:00,D,aa6425-aug20,LAX,LAS,2026-08-20,AA6425,246.00,1,
