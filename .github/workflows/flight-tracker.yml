@@ -1,8 +1,8 @@
 name: Flight tracker
 
 on:
-  schedule:
-    - cron: "*/10 * * * *"
+  # Triggered by cron-job.org via workflow_dispatch (avoids double-firing
+  # with GitHub's native schedule, which was stacking overlapping runs).
   workflow_dispatch:
 
 concurrency:
