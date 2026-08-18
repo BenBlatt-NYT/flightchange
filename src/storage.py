@@ -14,6 +14,8 @@ CSV_FIELDS = [
     "destination",
     "departure_date",
     "flight_number",
+    "airline",
+    "departure_local",
     "price",
     "ok",
     "error",
@@ -47,15 +49,20 @@ class TrackerStore:
         ok: bool,
         cheapest_price: float | None = None,
         error_text: str | None = None,
+        airline: str | None = None,
+        departure_local: str | None = None,
+        checked_at: str | None = None,
     ) -> None:
         row = {
-            "checked_at": datetime.now(timezone.utc).isoformat(),
+            "checked_at": checked_at or datetime.now(timezone.utc).isoformat(),
             "route_name": route_name,
             "watch_id": watch_id,
             "origin": origin,
             "destination": destination,
             "departure_date": departure_date,
             "flight_number": flight_number or "",
+            "airline": airline or "",
+            "departure_local": departure_local or "",
             "price": "" if cheapest_price is None else f"{cheapest_price:.2f}",
             "ok": "1" if ok else "0",
             "error": error_text or "",
@@ -69,6 +76,24 @@ class TrackerStore:
         with self.csv_path.open(newline="", encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
                 if row["watch_id"] != watch_id or row["ok"] != "1":
+                    continue
+                price = row["price"].strip()
+                latest = LatestSnapshot(
+                    watch_id=row["watch_id"],
+                    checked_at=row["checked_at"],
+                    cheapest_price=float(price) if price else None,
+                )
+        return latest
+
+    def latest_for_flight(self, route_watch_id: str, flight_number: str) -> LatestSnapshot | None:
+        """Latest successful price for a flight under a route-scan watch."""
+        target = flight_number.upper()
+        latest: LatestSnapshot | None = None
+        with self.csv_path.open(newline="", encoding="utf-8") as handle:
+            for row in csv.DictReader(handle):
+                if row["watch_id"] != route_watch_id or row["ok"] != "1":
+                    continue
+                if (row.get("flight_number") or "").upper() != target:
                     continue
                 price = row["price"].strip()
                 latest = LatestSnapshot(

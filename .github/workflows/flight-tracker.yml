@@ -2,7 +2,7 @@ name: Flight tracker
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -15,6 +15,7 @@ permissions:
 jobs:
   track:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,13 +31,16 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tracker
-        run: python run.py --once --csv data/flight-prices.csv
+        run: python run.py --once --csv data/routes-sep16.csv
+
+      - name: Export chart CSVs
+        run: python export_charts.py --csv data/routes-sep16.csv
 
       - name: Commit price updates
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/flight-prices.csv
+          git add data/routes-sep16.csv data/charts/
           if git diff --staged --quiet; then
             echo "No CSV changes to commit."
             exit 0

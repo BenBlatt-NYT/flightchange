@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import yaml
 
 from .mcp_client import DEFAULT_MCP_URL, SkiplaggedMcpClient
-from .parser import parse_cheapest_price
+from .parser import filter_flight_offers, parse_cheapest_price, parse_flight_offers
 from .storage import TrackerStore
 
 
@@ -22,6 +23,9 @@ class Watch:
     return_date: str | None = None
     flight_number: str | None = None
     preferred_airlines: list[str] | None = None
+    include_airlines: list[str] | None = None
+    depart_before_hour: int | None = None
+    record_all_flights: bool = False
     direct_only: bool = True
     exclude_airlines: list[str] | None = None
     adults: int = 1
@@ -59,6 +63,9 @@ def load_config(path: Path) -> TrackerConfig:
             return_date=item.get("return_date"),
             flight_number=item.get("flight_number"),
             preferred_airlines=item.get("preferred_airlines"),
+            include_airlines=item.get("include_airlines"),
+            depart_before_hour=item.get("depart_before_hour"),
+            record_all_flights=bool(item.get("record_all_flights", False)),
             direct_only=item.get("direct_only", True),
             exclude_airlines=item.get("exclude_airlines"),
             adults=item.get("adults", 1),
@@ -112,7 +119,7 @@ class FlightTracker:
         self.mcp_url = mcp_url
         self.debug = debug
 
-    def check_watch(self, watch: Watch, max_attempts: int = 3) -> WatchResult:
+    def _search(self, watch: Watch, max_attempts: int = 3):
         arguments = watch_to_arguments(watch)
         if self.debug:
             print("--- request ---")
@@ -139,10 +146,100 @@ class FlightTracker:
 
         assert response is not None
         if self.debug:
-            print(f"HTTP status: 200 (from MCP server)")
+            print("HTTP status: 200 (from MCP server)")
             print(f"Tool error:  {response.is_error}")
             print(f"Response:    {response.text}")
             print("---------------")
+        return response
+
+    def check_watch(self, watch: Watch, max_attempts: int = 3) -> WatchResult:
+        if watch.record_all_flights:
+            return self._check_route_scan(watch, max_attempts=max_attempts)
+        return self._check_single_flight(watch, max_attempts=max_attempts)
+
+    def _check_route_scan(self, watch: Watch, max_attempts: int = 3) -> WatchResult:
+        response = self._search(watch, max_attempts=max_attempts)
+        checked_at = datetime.now(timezone.utc).isoformat()
+
+        if not response.ok:
+            self.store.save_check(
+                watch_id=watch.id,
+                route_name=watch.route_name,
+                origin=watch.origin,
+                destination=watch.destination,
+                departure_date=watch.departure_date,
+                flight_number=None,
+                ok=False,
+                error_text=response.text,
+                checked_at=checked_at,
+            )
+            return WatchResult(watch=watch, ok=False, message=response.text)
+
+        offers = filter_flight_offers(
+            parse_flight_offers(response.text),
+            direct_only=watch.direct_only,
+            include_airlines=watch.include_airlines,
+            depart_before_hour=watch.depart_before_hour,
+        )
+
+        if not offers:
+            message = "No matching flights found"
+            self.store.save_check(
+                watch_id=watch.id,
+                route_name=watch.route_name,
+                origin=watch.origin,
+                destination=watch.destination,
+                departure_date=watch.departure_date,
+                flight_number=None,
+                ok=False,
+                error_text=message,
+                checked_at=checked_at,
+            )
+            return WatchResult(watch=watch, ok=False, message=message)
+
+        changed_flights: list[str] = []
+        for offer in offers:
+            previous = self.store.latest_for_flight(watch.id, offer.flight_number)
+            previous_price = previous.cheapest_price if previous else None
+            changed = (
+                previous_price is not None
+                and offer.price != previous_price
+            )
+            if changed:
+                changed_flights.append(
+                    f"{offer.flight_number} ${previous_price:.0f}->${offer.price:.0f}"
+                )
+
+            self.store.save_check(
+                watch_id=watch.id,
+                route_name=watch.route_name,
+                origin=watch.origin,
+                destination=watch.destination,
+                departure_date=watch.departure_date,
+                flight_number=offer.flight_number,
+                ok=True,
+                cheapest_price=offer.price,
+                airline=offer.airline,
+                departure_local=offer.departure_local,
+                checked_at=checked_at,
+            )
+
+        prices = ", ".join(f"{o.flight_number}=${o.price:.0f}" for o in offers)
+        if changed_flights:
+            message = f"{len(offers)} flights; changes: {', '.join(changed_flights)}"
+        else:
+            message = f"{len(offers)} flights: {prices}"
+
+        return WatchResult(
+            watch=watch,
+            ok=True,
+            message=message,
+            cheapest_price=min(o.price for o in offers),
+            changed=bool(changed_flights),
+        )
+
+    def _check_single_flight(self, watch: Watch, max_attempts: int = 3) -> WatchResult:
+        response = self._search(watch, max_attempts=max_attempts)
         parsed = parse_cheapest_price(
             response.text,
             flight_number=watch.flight_number,
