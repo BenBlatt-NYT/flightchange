@@ -1,10 +1,11 @@
-poll_interval_minutes: 15
+poll_interval_minutes: 10
 request_delay_seconds: 8
 
 # Domestic: 17 airport pairs × 2 directions = 34 searches (pre-noon).
 # International: 8 one-way US→Europe searches (all day, Sep 16 2026).
-# 42 searches × ~8s ≈ 6 minutes of delay plus request time, so 15-minute
-# polling avoids overlapping Actions runs.
+# GitHub Actions runs --once (cron-job.org ~every 10 min). poll_interval
+# only applies to local run_forever. Sleep between searches is 8s, so
+# 41 gaps × 8s ≈ 5.5 min of delay plus HTTP time.
 
 watches:
   # --- pairs that had 4-way lowest-price ties ---
@@ -506,7 +507,7 @@ watches:
     destination: LHR
     departure_date: "2026-09-16"
     record_all_flights: true
-    include_airlines: [KLM, Air France, Virgin Atlantic, Delta, British Airways, Iberia]
+    include_airlines: [KLM, Air France, Virgin Atlantic, Delta, British Airways, Iberia, American, JetBlue]
     direct_only: true
     adults: 1
     max_stops: none
@@ -519,7 +520,7 @@ watches:
     destination: CDG
     departure_date: "2026-09-16"
     record_all_flights: true
-    include_airlines: [Air France, American, Virgin Atlantic, Delta, Iberia]
+    include_airlines: [Air France, American, Virgin Atlantic, Delta, Iberia, JetBlue]
     direct_only: true
     adults: 1
     max_stops: none
@@ -558,7 +559,7 @@ watches:
     destination: LHR
     departure_date: "2026-09-16"
     record_all_flights: true
-    include_airlines: [British Airways, American, Iberia]
+    include_airlines: [British Airways, American, Iberia, Delta, JetBlue, Virgin Atlantic]
     direct_only: true
     adults: 1
     max_stops: none
