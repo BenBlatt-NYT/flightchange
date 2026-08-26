@@ -31,7 +31,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run tracker
-        run: python run.py --once --csv data/routes-sep16.csv
+        run: python run.py --once --config config/watches.yaml --csv data/routes-sep16.csv
 
       - name: Export chart CSVs
         run: python export_charts.py --csv data/routes-sep16.csv

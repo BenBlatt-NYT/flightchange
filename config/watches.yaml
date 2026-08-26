@@ -1,489 +1,331 @@
+# Domestic A: 9 pairs × 2 directions = 18 searches, pre-noon Sep 16 2026.
+# Airlines: Delta, United, American, JetBlue, Alaska.
+# Other half: config/watches-b.yaml
+
 poll_interval_minutes: 10
 request_delay_seconds: 8
-
-# 17 airport pairs × 2 directions = 34 searches per cycle.
-# Nonstops departing before noon local, Sep 16 2026.
-# Airlines: Delta, United, American, JetBlue, Alaska.
-#
-# With ~8s between requests, a full cycle is ~6–8 minutes, so 5-minute
-# polling would overlap. 10 minutes is the minimum comfortable interval;
-# bump to 15 if you start seeing 429s or stacked Actions runs.
-
 watches:
-  # --- pairs that had 4-way lowest-price ties ---
-  - id: den-lax-sep16
-    route_name: DEN-LAX
-    origin: DEN
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-den-sep16
-    route_name: DEN-LAX
-    origin: LAX
-    destination: DEN
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: den-phx-sep16
-    route_name: DEN-PHX
-    origin: DEN
-    destination: PHX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: phx-den-sep16
-    route_name: DEN-PHX
-    origin: PHX
-    destination: DEN
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: den-sea-sep16
-    route_name: DEN-SEA
-    origin: DEN
-    destination: SEA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: sea-den-sep16
-    route_name: DEN-SEA
-    origin: SEA
-    destination: DEN
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-ord-sep16
-    route_name: LAX-ORD
-    origin: LAX
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-lax-sep16
-    route_name: LAX-ORD
-    origin: ORD
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-phx-sep16
-    route_name: LAX-PHX
-    origin: LAX
-    destination: PHX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: phx-lax-sep16
-    route_name: LAX-PHX
-    origin: PHX
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-sfo-sep16
-    route_name: LAX-SFO
-    origin: LAX
-    destination: SFO
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: sfo-lax-sep16
-    route_name: LAX-SFO
-    origin: SFO
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-sea-sep16
-    route_name: ORD-SEA
-    origin: ORD
-    destination: SEA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: sea-ord-sep16
-    route_name: ORD-SEA
-    origin: SEA
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: phx-sea-sep16
-    route_name: PHX-SEA
-    origin: PHX
-    destination: SEA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: sea-phx-sep16
-    route_name: PHX-SEA
-    origin: SEA
-    destination: PHX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  # --- pairs with a 3 and unlikely Southwest ---
-  - id: atl-ord-sep16
-    route_name: ATL-ORD
-    origin: ATL
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-atl-sep16
-    route_name: ATL-ORD
-    origin: ORD
-    destination: ATL
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: bos-ord-sep16
-    route_name: BOS-ORD
-    origin: BOS
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-bos-sep16
-    route_name: BOS-ORD
-    origin: ORD
-    destination: BOS
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: dca-ord-sep16
-    route_name: DCA-ORD
-    origin: DCA
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-dca-sep16
-    route_name: DCA-ORD
-    origin: ORD
-    destination: DCA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lga-ord-sep16
-    route_name: LGA-ORD
-    origin: LGA
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-lga-sep16
-    route_name: LGA-ORD
-    origin: ORD
-    destination: LGA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: mia-ord-sep16
-    route_name: MIA-ORD
-    origin: MIA
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-mia-sep16
-    route_name: MIA-ORD
-    origin: ORD
-    destination: MIA
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: msp-ord-sep16
-    route_name: MSP-ORD
-    origin: MSP
-    destination: ORD
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-msp-sep16
-    route_name: MSP-ORD
-    origin: ORD
-    destination: MSP
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: jfk-sfo-sep16
-    route_name: JFK-SFO
-    origin: JFK
-    destination: SFO
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: sfo-jfk-sep16
-    route_name: JFK-SFO
-    origin: SFO
-    destination: JFK
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ewr-lax-sep16
-    route_name: EWR-LAX
-    origin: EWR
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-ewr-sep16
-    route_name: EWR-LAX
-    origin: LAX
-    destination: EWR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: iah-lax-sep16
-    route_name: IAH-LAX
-    origin: IAH
-    destination: LAX
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: lax-iah-sep16
-    route_name: IAH-LAX
-    origin: LAX
-    destination: IAH
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    depart_before_hour: 12
-    include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
+- id: den-lax-sep16
+  route_name: DEN-LAX
+  origin: DEN
+  destination: LAX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: lax-den-sep16
+  route_name: DEN-LAX
+  origin: LAX
+  destination: DEN
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: den-phx-sep16
+  route_name: DEN-PHX
+  origin: DEN
+  destination: PHX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: phx-den-sep16
+  route_name: DEN-PHX
+  origin: PHX
+  destination: DEN
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: den-sea-sep16
+  route_name: DEN-SEA
+  origin: DEN
+  destination: SEA
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: sea-den-sep16
+  route_name: DEN-SEA
+  origin: SEA
+  destination: DEN
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: lax-ord-sep16
+  route_name: LAX-ORD
+  origin: LAX
+  destination: ORD
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: ord-lax-sep16
+  route_name: LAX-ORD
+  origin: ORD
+  destination: LAX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: lax-phx-sep16
+  route_name: LAX-PHX
+  origin: LAX
+  destination: PHX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: phx-lax-sep16
+  route_name: LAX-PHX
+  origin: PHX
+  destination: LAX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: lax-sfo-sep16
+  route_name: LAX-SFO
+  origin: LAX
+  destination: SFO
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: sfo-lax-sep16
+  route_name: LAX-SFO
+  origin: SFO
+  destination: LAX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: ord-sea-sep16
+  route_name: ORD-SEA
+  origin: ORD
+  destination: SEA
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: sea-ord-sep16
+  route_name: ORD-SEA
+  origin: SEA
+  destination: ORD
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: phx-sea-sep16
+  route_name: PHX-SEA
+  origin: PHX
+  destination: SEA
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: sea-phx-sep16
+  route_name: PHX-SEA
+  origin: SEA
+  destination: PHX
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: atl-ord-sep16
+  route_name: ATL-ORD
+  origin: ATL
+  destination: ORD
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
+- id: ord-atl-sep16
+  route_name: ATL-ORD
+  origin: ORD
+  destination: ATL
+  departure_date: '2026-09-16'
+  record_all_flights: true
+  depart_before_hour: 12
+  include_airlines:
+  - Delta
+  - United
+  - American
+  - JetBlue
+  - Alaska
+  direct_only: true
+  adults: 1
+  max_stops: none
+  sort: price
+  limit: 100
