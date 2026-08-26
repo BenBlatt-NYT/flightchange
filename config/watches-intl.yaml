@@ -1,0 +1,112 @@
+poll_interval_minutes: 10
+request_delay_seconds: 8
+
+# 8 one-way US→Europe nonstops, all day, Sep 16 2026.
+# Separate from the domestic tracker so the two GitHub Actions jobs
+# do not share a 10-minute slot. Stagger this cron ~5 minutes off
+# the domestic one so Skiplagged calls do not overlap.
+
+watches:
+  - id: iad-lhr-sep16
+    route_name: IAD-LHR
+    origin: IAD
+    destination: LHR
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [KLM, Air France, United, British Airways, Virgin Atlantic, Iberia]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: jfk-lhr-sep16
+    route_name: JFK-LHR
+    origin: JFK
+    destination: LHR
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [KLM, Air France, Virgin Atlantic, Delta, British Airways, Iberia, American, JetBlue]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: jfk-cdg-sep16
+    route_name: JFK-CDG
+    origin: JFK
+    destination: CDG
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [Air France, American, Virgin Atlantic, Delta, Iberia, JetBlue]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: ord-lhr-sep16
+    route_name: ORD-LHR
+    origin: ORD
+    destination: LHR
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [American, British Airways, United, Iberia]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: mia-lhr-sep16
+    route_name: MIA-LHR
+    origin: MIA
+    destination: LHR
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [British Airways, Virgin Atlantic, American, KLM, Air France, Iberia]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: bos-lhr-sep16
+    route_name: BOS-LHR
+    origin: BOS
+    destination: LHR
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [British Airways, American, Iberia, Delta, JetBlue, Virgin Atlantic]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: atl-cdg-sep16
+    route_name: ATL-CDG
+    origin: ATL
+    destination: CDG
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [Virgin Atlantic, Air France, Delta]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100
+
+  - id: jfk-ams-sep16
+    route_name: JFK-AMS
+    origin: JFK
+    destination: AMS
+    departure_date: "2026-09-16"
+    record_all_flights: true
+    include_airlines: [KLM, Delta]
+    direct_only: true
+    adults: 1
+    max_stops: none
+    sort: price
+    limit: 100

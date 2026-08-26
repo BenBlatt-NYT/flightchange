@@ -1,11 +1,13 @@
 poll_interval_minutes: 10
 request_delay_seconds: 8
 
-# Domestic: 17 airport pairs × 2 directions = 34 searches (pre-noon).
-# International: 8 one-way US→Europe searches (all day, Sep 16 2026).
-# GitHub Actions runs --once (cron-job.org ~every 10 min). poll_interval
-# only applies to local run_forever. Sleep between searches is 8s, so
-# 41 gaps × 8s ≈ 5.5 min of delay plus HTTP time.
+# 17 airport pairs × 2 directions = 34 searches per cycle.
+# Nonstops departing before noon local, Sep 16 2026.
+# Airlines: Delta, United, American, JetBlue, Alaska.
+#
+# With ~8s between requests, a full cycle is ~6–8 minutes, so 5-minute
+# polling would overlap. 10 minutes is the minimum comfortable interval;
+# bump to 15 if you start seeing 429s or stacked Actions runs.
 
 watches:
   # --- pairs that had 4-way lowest-price ties ---
@@ -480,112 +482,6 @@ watches:
     record_all_flights: true
     depart_before_hour: 12
     include_airlines: [Delta, United, American, JetBlue, Alaska]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  # --- international one-way, US origin → Europe, all day Sep 16 ---
-  # No depart_before_hour: record every matching nonstop.
-  - id: iad-lhr-sep16
-    route_name: IAD-LHR
-    origin: IAD
-    destination: LHR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [KLM, Air France, United, British Airways, Virgin Atlantic, Iberia]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: jfk-lhr-sep16
-    route_name: JFK-LHR
-    origin: JFK
-    destination: LHR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [KLM, Air France, Virgin Atlantic, Delta, British Airways, Iberia, American, JetBlue]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: jfk-cdg-sep16
-    route_name: JFK-CDG
-    origin: JFK
-    destination: CDG
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [Air France, American, Virgin Atlantic, Delta, Iberia, JetBlue]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: ord-lhr-sep16
-    route_name: ORD-LHR
-    origin: ORD
-    destination: LHR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [American, British Airways, United, Iberia]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: mia-lhr-sep16
-    route_name: MIA-LHR
-    origin: MIA
-    destination: LHR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [British Airways, Virgin Atlantic, American, KLM, Air France, Iberia]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: bos-lhr-sep16
-    route_name: BOS-LHR
-    origin: BOS
-    destination: LHR
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [British Airways, American, Iberia, Delta, JetBlue, Virgin Atlantic]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: atl-cdg-sep16
-    route_name: ATL-CDG
-    origin: ATL
-    destination: CDG
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [Virgin Atlantic, Air France, Delta]
-    direct_only: true
-    adults: 1
-    max_stops: none
-    sort: price
-    limit: 100
-
-  - id: jfk-ams-sep16
-    route_name: JFK-AMS
-    origin: JFK
-    destination: AMS
-    departure_date: "2026-09-16"
-    record_all_flights: true
-    include_airlines: [KLM, Delta]
     direct_only: true
     adults: 1
     max_stops: none
