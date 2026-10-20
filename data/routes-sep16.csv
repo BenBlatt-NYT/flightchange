@@ -1316371,3 +1316371,165 @@ checked_at,route_name,watch_id,origin,destination,departure_date,flight_number,a
     ]
   }
 ]"
+2026-10-20T17:00:32.077878+00:00,DEN-LAX,den-lax-sep16,DEN,LAX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:00:40.307819+00:00,DEN-LAX,lax-den-sep16,LAX,DEN,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:00:48.426325+00:00,DEN-PHX,den-phx-sep16,DEN,PHX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:00:56.564414+00:00,DEN-PHX,phx-den-sep16,PHX,DEN,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:04.726776+00:00,DEN-SEA,den-sea-sep16,DEN,SEA,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:12.921307+00:00,DEN-SEA,sea-den-sep16,SEA,DEN,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:21.302559+00:00,LAX-ORD,lax-ord-sep16,LAX,ORD,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:29.642181+00:00,LAX-ORD,ord-lax-sep16,ORD,LAX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:37.944368+00:00,LAX-PHX,lax-phx-sep16,LAX,PHX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:46.374443+00:00,LAX-PHX,phx-lax-sep16,PHX,LAX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:01:54.704354+00:00,LAX-SFO,lax-sfo-sep16,LAX,SFO,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:03.052997+00:00,LAX-SFO,sfo-lax-sep16,SFO,LAX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:11.319165+00:00,ORD-SEA,ord-sea-sep16,ORD,SEA,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:19.588424+00:00,ORD-SEA,sea-ord-sep16,SEA,ORD,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:27.878513+00:00,PHX-SEA,phx-sea-sep16,PHX,SEA,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:36.162060+00:00,PHX-SEA,sea-phx-sep16,SEA,PHX,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:44.437410+00:00,ATL-ORD,atl-ord-sep16,ATL,ORD,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
+2026-10-20T17:02:52.732185+00:00,ATL-ORD,ord-atl-sep16,ORD,ATL,2026-09-16,,,,,0,"MCP error -32602: Input validation error: Invalid arguments for tool sk_flights_search: [
+  {
+    ""code"": ""custom"",
+    ""message"": ""Date must be today or later"",
+    ""path"": [
+      ""departureDate""
+    ]
+  }
+]"
